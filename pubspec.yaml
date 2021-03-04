@@ -12,10 +12,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  async_redux:
+  equatable:
+  copy_with_extension: ^2.0.0-nullsafety.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  import_sorter:
+  pedantic:
+  copy_with_extension_gen: ^2.0.0-nullsafety.1
 
 flutter:
   uses-material-design: true
+
+
+import_sorter:
+  comments: false
+  ignored_files:
+    - /lib/generated

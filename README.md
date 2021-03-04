@@ -11,8 +11,20 @@ Then in project directory call
 fvm install
 ```
 
+## Generate Files
+Auto-generated files are not included in the repository, so you have to build them first:
+```bash
+./generate.sh
+```
+
 ## Run
 Right now, this project only supports Flutter Web. To run the it, call:
 ```bash
 fvm flutter run -d chrome
+```
+
+## Sort Imports
+To sort import and auto format a code run:
+```bash
+./sort_imports.sh
 ```
