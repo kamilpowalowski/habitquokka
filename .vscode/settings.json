@@ -1,11 +1,9 @@
 {
-    "cSpell.words": [
-        "habitquokka",
-        "nullsafety",
-        "repos",
-        "screenutil"
+    "cSpell.words": [],
+    "cSpell.enableFiletypes": [
+        "!yaml"
     ],
     "dart.flutterSdkPaths": [
         ".fvm/flutter_sdk"
-    ]
+    ],
 }

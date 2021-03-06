@@ -16,6 +16,7 @@ dependencies:
   equatable:
   copy_with_extension: ^2.0.0-nullsafety.1
   supercharged:
+  beamer: ^1.0.0-nullsafety.0
 
   # UI
   cached_network_image: ^3.0.0-nullsafety
@@ -26,7 +27,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner:
-  import_sorter:
+  import_sorter: ^4.4.1
   pedantic:
   copy_with_extension_gen: ^2.0.0-nullsafety.1
 
