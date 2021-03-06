@@ -16,6 +16,9 @@ dependencies:
   equatable:
   copy_with_extension: ^2.0.0-nullsafety.1
 
+  # UI
+  cached_network_image: ^3.0.0-nullsafety
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -2,13 +2,15 @@
 Strength or growth good habits with additional motivation to discover images hidden behind closed windows.
 
 ## Installation
-To build this project you will need [fvm](https://pub.dev/packages/fvm) first. Install it by calling:
+To build this project you will need [fvm](https://pub.dev/packages/fvm) and [pre-commit](https://pre-commit.com) first. Install them by calling:
 ```base
 pub global activate fvm
+brew install pre-commit
 ```
 Then in project directory call
 ```base
 fvm install
+pre-commit install
 ```
 
 ## Generate Files

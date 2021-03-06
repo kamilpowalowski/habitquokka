@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "habitquokka"
+    ],
+    "dart.flutterSdkPaths": [
+        ".fvm/flutter_sdk"
     ]
 }
