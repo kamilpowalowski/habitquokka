@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:habitquokka/pages/calendar/view_model.dart';
 import 'package:habitquokka/pages/calendar/widgets/cover.dart';
+import 'package:habitquokka/pages/widgets/background.dart';
 
 class CalendarPage extends StatelessWidget {
   CalendarPage({required this.viewModel});
@@ -15,7 +16,9 @@ class CalendarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: _buildBody(context),
+      body: Background(
+        child: _buildBody(context),
+      ),
     );
   }
 

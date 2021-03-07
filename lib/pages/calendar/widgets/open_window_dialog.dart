@@ -26,11 +26,11 @@ class OpenWindowDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
-          child: Text(safe(L10n.of(context)).general_cancel),
+          child: Text(safe(L10n.of(context)).general_cancel.toUpperCase()),
         ),
         TextButton(
           onPressed: () => Navigator.of(context).pop(true),
-          child: Text(safe(L10n.of(context)).general_confirm),
+          child: Text(safe(L10n.of(context)).general_confirm.toUpperCase()),
         ),
       ],
     );
