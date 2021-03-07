@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:beamer/beamer.dart';
 
-import 'package:habitquokka/pages/calendar/connector.dart';
+import 'package:habitquokka/pages/home/home.dart';
 
-class CalendarLocation extends BeamLocation {
+class HomeLocation extends BeamLocation {
   @override
   List<String> get pathBlueprints => ['/'];
+
   @override
   List<BeamPage> get pages => [
         BeamPage(
-          key: ValueKey('$CalendarPageConnector'),
-          child: CalendarPageConnector(),
+          key: ValueKey('$HomePageConnector'),
+          child: HomePageConnector(),
         ),
       ];
 }

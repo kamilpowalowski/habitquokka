@@ -1,1 +1,1 @@
-export 'package:habitquokka/pages/locations/calendar.dart';
+export 'package:habitquokka/pages/locations/calendars.dart';

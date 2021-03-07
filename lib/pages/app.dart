@@ -6,14 +6,16 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:habitquokka/generated/l10n.dart';
+import 'package:habitquokka/pages/locations/home.dart';
 import 'package:habitquokka/pages/locations/locations.dart';
 import 'package:habitquokka/redux/redux.dart';
 import 'package:habitquokka/utils/intl_utils_fix.dart';
 
 class App extends StatelessWidget {
-  final BeamLocation _initialLocation = CalendarLocation();
+  final BeamLocation _initialLocation = HomeLocation();
   final List<BeamLocation> _beamLocations = [
-    CalendarLocation(),
+    HomeLocation(),
+    CalendarsLocation(),
   ];
 
   final _store = Store<AppState>(
