@@ -1,25 +1,44 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:supercharged/supercharged.dart';
+
+import 'package:habitquokka/pages/calendar/widgets/window.dart';
 
 class Cover extends StatefulWidget {
   Cover({
+    required this.id,
     required this.rows,
     required this.columns,
+    required this.shuffled,
   });
 
+  final String id;
   final int rows;
   final int columns;
+  final bool shuffled;
 
   @override
   _CoverState createState() => _CoverState();
 }
 
 class _CoverState extends State<Cover> {
-  final Set<int> _openedWindows = {};
+  final Set<int> _opened = {};
+  late List<int> _order;
 
-  bool get _fullyOpened =>
-      _openedWindows.length == widget.rows * widget.columns;
+  bool get _fullyOpened => _opened.length == widget.rows * widget.columns;
+
+  @override
+  void initState() {
+    super.initState();
+    _order =
+        1.rangeTo(widget.columns * widget.rows + 1).toList(growable: false);
+    if (widget.shuffled) {
+      _order.shuffle(math.Random(widget.id.hashCode));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,56 +59,25 @@ class _CoverState extends State<Cover> {
   TableBorder? _border(BuildContext context) {
     if (_fullyOpened) return null;
     return TableBorder.all(
-        color: Theme.of(context).colorScheme.primary, width: 8);
+      color: Theme.of(context).colorScheme.primary,
+      width: 8.w,
+    );
   }
 
-  _Window _buildWindow(int column, int row) {
-    final number = column + row * widget.columns + 1;
-    return _Window(
+  Widget _buildWindow(int column, int row) {
+    final index = column + row * widget.columns;
+    final number = _order[index];
+
+    return Window(
       onPressed: () => setState(() {
-        if (_openedWindows.contains(number)) {
-          _openedWindows.remove(number);
+        if (_opened.contains(number)) {
+          _opened.remove(number);
         } else {
-          _openedWindows.add(number);
+          _opened.add(number);
         }
       }),
-      isOpened: _openedWindows.contains(number),
+      opened: _opened.contains(number),
       number: number,
     );
   }
-}
-
-class _Window extends StatelessWidget {
-  _Window({
-    required this.number,
-    required this.isOpened,
-    required this.onPressed,
-  });
-
-  final int number;
-  final bool isOpened;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return TableCell(
-      child: AspectRatio(
-        aspectRatio: 1,
-        child: TextButton(
-          onPressed: onPressed,
-          style: TextButton.styleFrom(
-            backgroundColor: _backgroundColor(context),
-            primary: Theme.of(context).colorScheme.onPrimary,
-            textStyle: Theme.of(context).primaryTextTheme.button?.copyWith(
-                  fontSize: 36.sp,
-                ),
-          ),
-          child: Text(isOpened ? '' : '$number'),
-        ),
-      ),
-    );
-  }
-
-  Color? _backgroundColor(BuildContext context) =>
-      isOpened ? null : Theme.of(context).primaryColorDark;
 }

@@ -10,7 +10,7 @@ class CalendarLocation extends BeamLocation {
   @override
   List<BeamPage> get pages => [
         BeamPage(
-          key: ValueKey('home'),
+          key: ValueKey('$CalendarPageConnector'),
           child: CalendarPageConnector(),
         ),
       ];

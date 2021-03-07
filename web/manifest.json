@@ -1,11 +1,11 @@
 {
-    "name": "habitquokka",
+    "name": "Habit Quokka",
     "short_name": "habitquokka",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Strength or growth good habits with additional motivation to discover images hidden behind closed windows.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
