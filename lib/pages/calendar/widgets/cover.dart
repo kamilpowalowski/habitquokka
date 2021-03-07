@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:supercharged/supercharged.dart';
 
+import 'package:habitquokka/pages/calendar/widgets/open_window_dialog.dart';
 import 'package:habitquokka/pages/calendar/widgets/window.dart';
 
 class Cover extends StatefulWidget {
@@ -33,8 +34,7 @@ class _CoverState extends State<Cover> {
   @override
   void initState() {
     super.initState();
-    _order =
-        1.rangeTo(widget.columns * widget.rows + 1).toList(growable: false);
+    _order = 1.rangeTo(widget.columns * widget.rows).toList(growable: false);
     if (widget.shuffled) {
       _order.shuffle(math.Random(widget.id.hashCode));
     }
@@ -69,15 +69,21 @@ class _CoverState extends State<Cover> {
     final number = _order[index];
 
     return Window(
-      onPressed: () => setState(() {
-        if (_opened.contains(number)) {
-          _opened.remove(number);
-        } else {
-          _opened.add(number);
-        }
-      }),
+      onPressed: () => _handleWindowPressed(number),
       opened: _opened.contains(number),
       number: number,
     );
+  }
+
+  void _handleWindowPressed(int number) async {
+    if (_opened.contains(number)) {
+      setState(() => _opened.remove(number));
+      return;
+    }
+
+    final result = await OpenWindowDialog.show(context, number);
+    if (result != true) return;
+
+    setState(() => _opened.add(number));
   }
 }

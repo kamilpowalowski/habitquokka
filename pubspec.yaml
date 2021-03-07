@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   async_redux:
   equatable:
   copy_with_extension: ^2.0.0-nullsafety.1
@@ -30,10 +32,19 @@ dev_dependencies:
   import_sorter: ^4.4.1
   pedantic:
   copy_with_extension_gen: ^2.0.0-nullsafety.1
+  intl_utils:
+
+dependency_overrides:
+  analyzer: ^1.0.0
+  yaml: ^3.0.0
+  args: ^2.0.0
 
 flutter:
   uses-material-design: true
 
+flutter_intl:
+  enabled: true
+  class_name: L10n
 
 import_sorter:
   comments: false

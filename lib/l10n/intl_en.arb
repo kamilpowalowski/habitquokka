@@ -1,0 +1,8 @@
+{
+  "@@locale": "en",
+  "title": "Habit Quokka",
+  "general_cancel": "Cancel",
+  "general_confirm": "Confirm",
+  "calendar_cover_alert_title": "Open window {number}?",
+  "calendar_cover_alert_content": "Do you want to reveal image fragment visible under {number} number window?"
+}

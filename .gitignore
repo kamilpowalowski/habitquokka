@@ -69,3 +69,4 @@
 .fvm/flutter_sdk
 .flutter-plugins-dependencies
 *.g.dart
+lib/generated/*

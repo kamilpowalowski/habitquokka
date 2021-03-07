@@ -41,3 +41,11 @@ To sort import and auto format a code run:
 ```bash
 ./sort_imports.sh
 ```
+
+## Generate Translations
+
+To generate translations run:
+
+```bash
+./intl_utils.sh
+```
